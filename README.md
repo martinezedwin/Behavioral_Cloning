@@ -15,11 +15,15 @@ The simulator can be downloaded [here](https://github.com/udacity/self-driving-c
 
 Data Collection
 ---
-Using the simulator, in training mode, drive manually and record data of the vehicle driving by using the record function. This will output a left side, centered, and right side image along with a .csv file that maps each trio of images to their steering angle, throttle, brake, and speed. This data is in the folder DrivingData2. (Could not submit project with data, it was too large)
+Using the simulator, in training mode, drive manually and record data of the vehicle driving by using the record function. This will output a left side, centered, and right side image along with a .csv file that maps each trio of images to their steering angle, throttle, brake, and speed. This data is in the folder DrivingData2.
 
 ![Left_side_image](./left_2019_07_29_12_39_11_738.jpg) ![Center_image](./center_2019_07_29_12_39_11_738.jpg) ![Right_side_imaage](./right_2019_07_29_12_39_11_738.jpg)
 
-The images and corresponding steering angles where added into the lists images, measurments. This makes the images the training data with the measurements as the labels.
+The images and corresponding steering angles where added into the lists images, measurments. This makes the images the training data with the measurements as the labels. The following histogram describes how many times each steering angle was used:
+
+![Steering_angle_instances](./Label%20Instances%20Training%20Data.png)
+
+As you can see the zero steering angle is unproportionally pronounced, making the data unbalanced. Data augmentation techniques to make the data more evenly spread could be used. However, it was unecessary for this project.
 
 The data collected for the final trained model was roughly 2.5 counter clockwises laps trying to stay in the center of the road as much as possible. In addition about 1 counter clockwise lap of zig zag from one end of the lane to the other for the entire lap. This zig zag lap helped the model learn how to recover and go back closer to the center and remain there.
 
